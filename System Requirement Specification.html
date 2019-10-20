@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>System Requirement Specification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative;
+  }
+  ul.nav-pills {
+      position:fixed;
+  }
+  div.col-8 div {
+      height: 200px;
+  }
+</style>
+</head>
+<body style="background-color:#566573; color:white;" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <img src="src/KotoLogo.png" alt="KotoUI" style="width:15%"></img>
+  <header class="page header text-white"><h1 style="padding-left:10px;">System Requirement Specification </h1></header>
+
+  <!-- Links -->
+
+
+</ul>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-2 col-4 bg-dark" id="myScrollspy" >
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Introduction</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec1.1">Purpose</a>
+            <a class="dropdown-item" href="#sec1.2">Document Convention</a>
+            <a class="dropdown-item" href="#sec1.3">Intended Audience and<br> Reading Suggestions</a>
+            <a class="dropdown-item" href="#sec1.4">Product Scope</a>
+            <a class="dropdown-item" href="#sec1.5">References</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Overall Description</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec2.1">Product Perspective</a>
+            <a class="dropdown-item" href="#sec2.2">Product Functions</a>
+            <a class="dropdown-item" href="#sec2.3">User Classes and<br> Characteristics</a>
+            <a class="dropdown-item" href="#sec2.4">Operating Environment</a>
+            <a class="dropdown-item" href="#sec2.5">Design and Implementation<br> Constraints</a>
+            <a class="dropdown-item" href="#sec2.6">User Documentation</a>
+            <a class="dropdown-item" href="#sec2.7">Assumptions and<br> Dependencies</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">External Interface<br>Requirements</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec3.1">User Interfaces</a>
+            <a class="dropdown-item" href="#sec3.2">Hardware Interfaces</a>
+            <a class="dropdown-item" href="#sec3.3">Software Interfaces</a>
+            <a class="dropdown-item" href="#sec3.4">Communications Interfaces</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">System Features</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec4.1">Scan Receipts</a>
+            <a class="dropdown-item" href="#sec4.2">Check Income and<br> Expense Balance</a>
+            <a class="dropdown-item" href="#sec4.3">Provide Detailed Analysis<br> of Income and Expense</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Other Nonfunctional<br>Requirements</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec5.1">Performance Requirements</a>
+            <a class="dropdown-item" href="#sec5.2">Safety Requirements</a>
+            <a class="dropdown-item" href="#sec5.3">Security Requirements</a>
+            <a class="dropdown-item" href="#sec5.4">Software Quality Attributes</a>
+            <a class="dropdown-item" href="#sec5.5">Business Rules</a>
+          </div>
+        </li>
+        <li class="nav-item">
+      <a class="nav-link " href="#section6">Appendix</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div style="padding-top:30px; padding-left:30px; padding-right:150px;" class="col-sm-10 col-8">
+
+        <h2 style="color:#5FD3BC;">1. Introduction</h2>
+        <h4 id="sec1.1">1.1 Purpose</h4>
+        <p>In this modern era of screens and apps, money receipts have become a persistent token of the past. However, taking advantage of the modern-day technology, an easy and seamless solution to keep tabs on the day-to-day spendings and savings can be of utmost convenience. This is where the product, Koto – Finance Manager (v0.0) comes in. It is designed to keep an eye (or a camera) on the receipts so that the user(s) of this product can easily capture the receipt(s) and keep all the logs and bills safely stored in the cloud. The implementation of image recognition technology broadens the scope to store the expense details and run analyses on the transaction data. This allows the user to plan for savings and keep a tab on the income vs expenditure details. Succinctly, the product takes care of the daily monetary issues with just a snap!
+        <h4 id="sec1.2">1.2 Document Convention</h4>
+        <p> Typical document conventions are maintained where main topics are bold, have a font size of about 20pt and are numbered from 1 to 6. Sub topics are bold, have a smaller font size of about 16pt and are numbered with the main topic number as a prefix, eg 1.1 to 1.5. Priority ratings in the later section range from 1 to 9, 9 being the most important and 1 being the least. Special names and technical terminology are italicized, which have been explained later in the document in the glossary section (Appendix A).
+        <h4 id="sec1.3">1.3 Intended Audience and Reading Suggestions</h4>
+        <p> The intended audience of this document would be clients, project managers and marketing staff who will evaluate the project. As such, this document was written in plain english with little to no technical terminology so as to let anyone interested in the Koto project to read this SRS. This document contain who this app is for, how and where it will run and what it can do. It is recommended that the SRS be read sequentially according to the index given previously.
+        <h4 id="sec1.4">1.4 Product Scope</h4>
+        <p> Maintaining personal expense diaries or simply stashing every credit card receipt will be a thing of the past. The Koto application simplifies all these problems and gives you the solution at the palm of your hands.  It is designed to keep an eye (or a camera) on the receipts so that the user(s) of this product can easily capture the receipt(s) and keep all the logs and bills safely stored in the cloud.
+        <h4 id="sec1.5">1.5 References</h4>
+        <a style="color:cornsilk;" href="https://material.io/design/introduction/">Google’s Material Design interface style guide</a><br>
+        <a style="color:cornsilk;" href="https://www.djangoproject.com/start/overview/">Python Django Framework</a><br>
+        <a style="color:cornsilk;" href="https://cloud.google.com/vision/">Google Vision API</a><br>
+        <a style="color:cornsilk;" href="https://firebase.google.com/">Google FIrebase Backend Service</a>
+        <br><br><br>
+
+        <!-- Descriptions edited -->
+
+        <h2 style="color:#5FD3BC;">2. Overall Description</h2>
+        <p> This section deals with a broad overview of the product Koto – Finance Manager, explaining the functionalities and goals that the software aims to achieve. It also provides details on the dependencies, constraints, operating environment of the product along with user classes and user manuals.
+        <h4 id="sec2.1">2.1 Product Perspective</h4>
+        <p> Koto - Finance Manager is a smart and easy solution to track the daily life expenditures of any authenticated user of the application. When released, the final product would be the first version of the software. It is designed to store the user’s money receipts (printed or handwritten) or manually entered expenditure(s) to keep the record of the expenses in order to provide an analysis of income, expense and savings at the end of a certain time frame.
+        <h4 id="sec2.2">2.2 Product Functions</h4>
+        <p> The product functions are heavily user dependent (as elaborated in System Features section). The admin’s function is to only maintain the software and update it whenever necessary. In order to make the functions comprehensible, a use case diagram of the user (actor) is demonstrated below:</p>
+          <img src="src/SRS_usecase.png" alt="KotoUI" style="width:60%">
+          <p style="font-size:90%"><i><center>Figure: Actor(user) and the Use-cases </i></center></p>
+        <h4 id="sec2.3">2.3 User Classes and Characteristics</h4>
+        <p> The software will consist of mainly two types of users: registered users and the admin.
+        The admin’s job is pretty simple and straightforward, they can only update the software. Since the product keeps track of the user’s personal expenses and income, due to security issues the users data shall not be accessed by the admin. The users can scan the receipts, input manual expenditures, input their income and saving targets and view the ‘Wallet’ for an insight of their financial state.
+        <h4 id="sec2.4">2.4 Operating Environments</h4>
+        <p> The operating environment of Koto - Finance Manager is listed as follows:
+        <!-- For listing the attributes -->
+        <ul> <li> Distributed Database </li>
+             <li> Client/Server System </li>
+             <li> Operating System: any system that supports a modern web browser</li>
+             <li> Database Configuration: Django and Google Firebase </li>
+             <li> Platform: Web and Android </li>
+        </ul>
+        <h4 id="sec2.5">2.5 Design and Implementation Constraints</h4>
+        <p> The mobile application of the product is currently designed for android users only. To store the receipt snaps, the product makes use of the Google Cloud and Firebase (the Cloud Storage for Firebase is tightly integrated with Google Cloud Platform). These services are currently free but it comes with usage limitations that include 1000 processes a month, 100 simultaneous database connections and 1 gigabyte of database storage and therefore the scalability issue of the software is involved. Another constraint lies in the fact that the product is heavily depended on the Google’s Image Recognition technology and hence requires an Internet connection for it to work.
+        <h4 id="sec2.6">2.6 User Documentation</h4>
+        <p> The product will provide users with in-app slideshow instructions to run the users through the basics and a short video tutorial demonstrating the final software product.
+        <h4 id="sec2.7">2.7 Assumptions and Dependencies</h4>
+        <p> The user of the system requires a smart-phone with an Android Operating System of version as early as 5.0 Lollipop with a built in camera which will be accessed via the app to take pictures. The user should have an internet connection to upload pictures to the cloud and for the image recognition algorithm to return the textual data that has been read from the receipts. For the image recognition algorithm, this product depends on Google’s Vision <i>API</i>. It is assumed that the user(s) of this software is registered via Google account and wants to keep track of their financial status.
+        <br><br><br>
+
+
+        <h2 style="color:#5FD3BC;">3. External Interface</h2>
+        <h4 id="sec3.1">3.1 User Interfaces</h4>
+        <p>The android app will consist of 3 main horizontal tabs at the bottom that the user can swipe through. From left to right, they are - Camera, Wallet and Logs.<br><br>
+        <img src="src/KotoUI.png" alt="KotoUI" style="width:100%">
+        <p style="font-size:90%"><i>Figure: UI Mockup of the Koto Android app</i></p>
+        <p>The camera tab will be where users take snaps of the receipts/bills that they want to digitize. It simply has a camera view, a capture button along with an option for flash and a gallery button to pick a previously taken image from the phone's storage to analyze. The user will then be asked to point out keywords and classify the entry.
+        <p>The home tab is a graphical overview of the user’s expenditure and savings. It will feature a meter representing the user's wallet initially set by their income. All expenditures count towards decreasing the wallet meter like a video game life bar. Leftover money is displayed as savings.
+        <p>The log tab is where all the user's previously snapped or manually input expenditures are stored in a searchable and chronological manner. The list will have the title key word of the bill along with a date and time. A search button is where users can search according to key words or bill content or date.
+        <p>As for the product family style guide, Google's Material Design is to be followed as much as possible with layout constraints typical of modern android apps similar to Instagram or Snapchat for example. Software components required for such an app would be an Android Operating System of version as early as 5.0 Lollipop.
+
+        <h4 id="sec3.2">3.2 Hardware Interfaces</h4>
+        <p>The primary hardware Koto requires at this point is a smartphone with a built in camera. The device should be able to activate the camera from within the app to take pictures. The secondary requirement is an active Internet connection, either by mobile data or WiFi. A connection capable of uploading pictures and receiving textual data is sufficient. This is to communicate with the Google cloud services which will run the image analysis.
+
+        <h4 id="sec3.3">3.3 Software Interfaces</h4>
+        <p>The Koto app will run on a smartphone device running at least Android version 5.0 Lollipop, while a browser-based web interface will run on any computer (Windows, Mac or Linux) with a capable modern web browser. Google’s Cloud Platform will be used to take advantage of its Firebase Backend Service and Google Vision for optical character recognition. The database will be constructed in Python 3 Django version 2. Google’s Cloud services like Firebase, Cloud Storage and use of Vision OCR are commercial components and costs around $3 per month.
+
+        <h4 id="sec3.4">Communications Interfaces</h4>
+        <p>The application will send images to Google’s Vision servers to analyze and will receive text data that has been recognized in the image in a format readable and presentable by the app. Here approximately 4MB of data is transferred (dependant largely on the quality of the image). All this occurs via HTTP requests and the images and data transferred are encrypted by Google’s proprietary technology.
+        <br><br><br>
+
+        <!--System Features-->
+        <h2 style="color:#5FD3BC;">4. System Features</h2>
+        <p>The system features stated below are the core building blocks for the Koto application. However, these are not the only features that the application consists of. Other small but crucial features such as using third party authentication for login are omitted from this section due to its trivial nature.
+        <h4 id="sec4.1">4.1 Scan Receipts</h4>
+        <strong>4.1.1 Description and Priority</strong>
+        <p>Information from printed or handwritten sales receipts will be extracted and analyzed using google's vision API.</p>
+        Priority: HIGH
+        <li>Benefit - 9</li>
+        <li>Cost - 8</li>
+        <li>Risk - 7</li></p>
+
+        <strong>4.1.2 Stimulus/ Response Sequences</strong>
+        <p>The following expanded use case shows the response sequences between the actor actions and the system responses.
+        <li>Use Case Name: Scan Documents</li>
+        <li>Actor: User</li>
+        <li>Type: Primary</li>
+        <li>Overview: Allows user to capture or use pre-existing images of receipts to extract transaction information.</li></p>
+
+        Typical Course of Actions:
+
+        <img src="src/SRS_Table.png" alt="KotoUI" style="width:95%"> <!-- Table 1.0 -->
+        <p style="font-size:90%"><i>Table 1.0 : Typical Course of Events </i></p>
+
+        <p>Alternate Course of Actions:<br>**Refers to Table 1.0
+        <img src="src/SRS_Table1.png" alt="KotoUI" style="width:90%"> <!-- Table 1.1 -->
+        <p style="font-size:90%"><i>Table 1.1 : Alternate Course of Action </i></p>
+
+        <p><strong>4.1.3 Functional Requirement</strong>
+        <img src="src/SRS_Table2.png" alt="KotoUI" style="width:90%"> <!-- Table 1.2 -->
+        <p style="font-size:90%"><i>Table 1.2 : Functional Requirements </i></p>
+
+
+
+        <h4 id="sec4.2">4.2 Check Income and Expense Balance</h4>
+        <strong>4.2.1 Description and Priority</strong>
+        <p>There will be a graphical overview of the user’s expenditure and savings. It will feature a meter representing the user's wallet initially set by their income. All expenditures count towards decreasing the wallet meter like a video game life bar. Leftover money is displayed as savings.</p>
+        Priority: HIGH
+        <li>Benefit - 9</li>
+        <li>Cost - 4</li>
+        <li>Risk - 2</li></p>
+
+        <strong>4.2.2 Stimulus/ Response Sequences</strong>
+        <p>The following expanded use case shows the response sequences between the actor actions and the system responses.
+        <li>Use Case Name: Check Income and Expense Balance</li>
+        <li>Actor: User</li>
+        <li>Type: Primary</li>
+        <li>Overview: Allows user to have an overview of their monthly income and expenditure.</li></p>
+
+        Typical Course of Actions:
+
+        <img src="src/SRS_Table3.png" alt="KotoUI" style="width:95%"> <!-- Table 2.0 -->
+        <p style="font-size:90%"><i>Table 2.0 : Typical Course of Events </i></p>
+
+        <p>Alternate Course of Actions:<br>**Refers to Table 2.0
+        <img src="src/SRS_Table4.png" alt="KotoUI" style="width:90%"> <!-- Table 2.1 -->
+        <p style="font-size:90%"><i>Table 2.1 : Alternate Course of Action </i></p>
+
+        <p><strong>4.1.3 Functional Requirement</strong>
+        <img src="src/SRS_Table5.png" alt="KotoUI" style="width:90%"> <!-- Table 2.2 -->
+        <p style="font-size:90%"><i>Table 2.2 : Functional Requirements </i></p>
+
+        <h4 id="sec4.3">4.3 Provide Detailed Analysis of Income and Expense</h4>
+        <strong>4.3.1 Description and Priority</strong>
+        <p>Based on the information entered by the user, the application will give graphical analysis such as pie charts to the user as feedback. For example, a pie chart may show what the user is spending on the most and another example could be by comparing previous months usage on food consumption give the user feedback on how he or she did on her budget for food on the current month. </p>
+        Priority: MEDIUM
+        <li>Benefit - 7</li>
+        <li>Cost - 4</li>
+        <li>Risk - 2</li></p>
+
+        <strong>4.3.2 Stimulus/ Response Sequences</strong>
+        <p>The following expanded use case shows the response sequences between the actor actions and the system responses.
+        <li>Use Case Name: Detailed Analysis of Transaction Data</li>
+        <li>Actor: User</li>
+        <li>Type: Secondary</li>
+        <li>Overview: Allows user to have a detailed understanding of their transactions. </li></p>
+
+        Typical Course of Actions:
+        <img src="src/SRS_Table6.png" alt="KotoUI" style="width:95%"> <!-- Table 3.0 -->
+        <p style="font-size:90%"><i>Table 3.0 : Typical Course of Events </i></p>
+
+        <p>Alternate Course of Actions:<br>**Refers to Table 3.0
+        <img src="src/SRS_Table4.png" alt="KotoUI" style="width:90%"> <!-- Table 3.1 -->
+        <p style="font-size:90%"><i>Table 3.1 : Alternate Course of Action </i></p>
+
+        <p><strong>4.3.3 Functional Requirement</strong>
+        <img src="src/SRS_Table5.png" alt="KotoUI" style="width:90%"> <!-- Table 3.2 -->
+        <p style="font-size:90%"><i>Table 3.2 : Functional Requirements </i></p>
+        <br><br><br>
+
+
+        <h2 style="color:#5FD3BC;">5. Other Nonfunctional Requirements</h2>
+        <h4 id="sec5.1">Performance Requirements</h4>
+        <p>Any Interface between a user and software shall have reasonable response time based on Intranet connection</p>
+        <h4 id="sec5.2">Safety Requirements</h4>
+        <p>To ensure no data is lost in case the user decides to change devices or if the user's device is extensively damaged all data will be stored in google cloud storages. This will allow safe storage and easy accessibility from anywhere.</p>
+        <h4 id="sec5.3">Security Requirements</h4>
+        <p>The System shall not disclose any personal information about the users. The Application shall not grant access to an unauthorized user and the Application shall not communicate with any other devices or servers while in use by the user.<br>In addition to that users must refrain from uploading any sensitive information such as credit card info, id or any personal information that is not required.</p>
+
+        <h4 id="sec5.4">Software Quality Attributes</h4>
+        <p>The software quality attributes of koto - finance manager is listed below:
+        <ul>
+          <li> <strong>AVAILABILITY : </strong>  As the system will be hosted in cloud servers it will be available all the time for users. </li>
+          <li> <strong>CORRECTNESS:</strong> The system will pull appropriate information from the receipt images and use Google’s Vision API to provide accurate information based on the users request
+          </li>
+          <li><strong> MAINTAINABILITY:</strong> The system will store and maintain all uploaded copies of the receipts. </li>
+        </ul>
+
+        <h4 id="sec5.5">Business Rules</h4>
+        <p>The system will have two different editions based on the business models. The editions will have certain features differences in addition to sharing the common features e.g. scanning receipts, monthly/weekly track records. The two business models are briefly discussed below :
+</p>
+<ul>
+  <li><strong>Freemium :</strong> This version of the app which will be available for the general masses will contain all the basic features described above. This specific version will also contain advertisement  in forms of  banners or short video clips. User will be able to remove advertisement buy purchasing the add free subscription which will be offered after successful registration to the app.
+  </li>
+  <li><strong> Enterprise edition :</strong> This version will be designed specifically for small or large scale businesses and will be subscription based. In addition to the basic features the version will provide extra features such as multiple user access, finance analytics etc.
+</li>
+
+        <br><br><br>
+
+        <h2 style="color:#5FD3BC;">6. Appendix</h2>
+        <h4 id="section6">Appendix : Glossary</h4>
+        <li>API: Application Protocol Interface. This is the part of a program that lets other programs or services interact with the data in the former and viceversa.
+        <li>Framework: It is like the base of a program that provides generic functionality but can be custom built for specific purposes
+        <li>Backend: The part of an app service that works behind the scenes away from the user's device, usually in the cloud (server computer owned by the company)
+        <li>Proprietary: Owned by that particular company/person etc
+        </li>
+        <br>
+
+
+      <div style="padding-top:20px;" class="row">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
